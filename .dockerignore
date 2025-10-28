@@ -1,0 +1,37 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+README.md
+docs/
+
+# Infrastructure
+iac/
+*.tf
+*.tfstate
+*.tfstate.backup
+
+# CI/CD
+.github/
+deploy/
+deployment.yml
+
+# Other
+LICENSE.txt
+maintf
+.env
+

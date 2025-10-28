@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt Prep - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #2E86C1;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #1C6396;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2E86C1;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #2E86C1;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .features, .testimonials, .call-to-action {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%; /* Responsive images */
+            max-width: 600px; /* Limit the max width */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Rounded corners for images */
+            margin-top: 10px; /* Space between text and image */
+        }
+
+        /* Specific styles for key features images */
+        .feature-images {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center the images */
+            flex-wrap: wrap; /* Wrap images to the next line if needed */
+            margin: 20px 0; /* Add margin for spacing */
+        }
+
+        .feature-images img {
+            width: 250x; /* Increased width for key features images */
+            height: 250px; /* Increased height for key features images */
+            object-fit: cover; /* Maintain aspect ratio */
+            margin: 20px; /* Space between images */
+        }
+
+        .caption {
+            font-size: 16px; /* Font size for captions */
+            margin-top: 5px; /* Space between image and caption */
+            color: #333; /* Caption color */
+        }
+
+        /* Specific style for the Join Us image */
+        .join-us-img {
+            width: 200px; /* Adjust the width for Join Us image */
+            height: auto; /* Maintain aspect ratio */
+            margin: 10px; /* Space above the image */
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Govt Prep</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="courses.html">Courses</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>About Us</h2>
+        <p>Govt Prep is dedicated to helping aspiring candidates prepare for various government exams.</p>
+        <p>We offer comprehensive study materials, expert guidance, and resources tailored to your exam needs.</p>
+        <p>Join our community of learners and unlock your potential!</p>
+        <img src="IMG/How-to-Prepare-for-Sarkari-Naukri.jpg" alt="About Us Image"> <!-- About Us Image -->
+
+        <div class="features">
+            <h2>Key Features</h2>
+            <p><strong>Comprehensive Study Material:</strong> Access a wide range of resources covering various subjects.</p>
+            <p><strong>Expert Guidance:</strong> Learn from experienced instructors who understand the exam landscape.</p>
+            <p><strong>Community Support:</strong> Join forums and study groups to connect with fellow aspirants.</p>
+            <p><strong>Practice Tests:</strong> Test your knowledge with mock exams to gauge your readiness.</p>
+        </div>
+
+        <!-- Add all images below the key features -->
+        <div class="feature-images">
+            <div>
+                <img src="IMG/study-metarial-1.jpg" alt="Comprehensive Study Material Image"> <!-- Comprehensive Study Material Image -->
+                <div class="caption"><strong>Comprehensive Study Material</strong></div>
+            </div>
+            <div>
+                <img src="IMG/expert.jpg" alt="Expert Guidance Image"> <!-- Expert Guidance Image -->
+                <div class="caption"><strong>Expert Guidance</strong></div>
+            </div>
+            <div>
+                <img src="IMG/community-network-social-icon_487414-3257.avif" alt="Community Support Image"> <!-- Community Support Image -->
+                <div class="caption"><strong>Community Support</strong></div>
+            </div>
+            <div>
+                <img src="IMG/online test.avif" alt="Practice Tests Image"> <!-- Practice Tests Image -->
+                <div class="caption"><strong>Practice Tests</strong></div>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Users Say</h2>
+            <p>"Govt Prep helped me immensely in my preparation. The resources are top-notch!" - <em>MADDY</em></p>
+            <p>"I love the community aspect. It's great to connect with others on the same journey." - <em>ANTO</em></p>
+            <p>"The practice tests really helped me identify my strengths and weaknesses." - <em>WILFRED</em></p>
+            <img src="IMG/TESTIMONIALS.jpg" alt="Testimonials Image"> <!-- Testimonials Image -->
+        </div>
+
+        <div class="call-to-action">
+            <h2>Get Started Today!</h2>
+            <p>Ready to take your preparation to the next level? Register now or log in to access exclusive content!</p>
+            <div class="button-container">
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+            </div>
+            <img class="join-us-img" src="IMG/JOIN US.png" alt="Get Started Image"> <!-- Get Started Image -->
+        </div>
+    </main>
+    
+    <div class="footer">
+        <p>Govt Prep © 2024 - Preparing for success!</p>
+    </div>
+</body>
+</html>

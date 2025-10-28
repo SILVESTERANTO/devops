@@ -1,0 +1,39 @@
+﻿# OS
+.DS_Store
+Thumbs.db
+
+# Node/Python (if added later)
+node_modules/
+venv/
+.env
+
+# Terraform and providers
+**/.terraform/**
+**/terraform.exe
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/.terraform.lock.hcl
+
+# Terraform local caches and plans
+**/*.tfplan
+
+# Kubernetes
+**/*.kubeconfig
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Build artifacts
+/dist/
+/build/
+
+# Misc
+deploy
+maintf

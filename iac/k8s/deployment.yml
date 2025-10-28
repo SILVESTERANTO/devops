@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: govt-prep-deploy
+  namespace: default
+  labels:
+    app: govt-prep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: govt-prep
+  template:
+    metadata:
+      labels:
+        app: govt-prep
+    spec:
+      containers:
+      - name: govt-prep-container
+        image: acr_name.azurecr.io/govt-prep-app:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5

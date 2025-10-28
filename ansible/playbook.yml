@@ -1,0 +1,78 @@
+---
+- name: Deploy Govt Prep Application to Kubernetes
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  
+  vars:
+    deployment_file: "iac/k8s/deployment.yml"
+    service_file: "iac/k8s/service.yml"
+    acr_login_server: ""
+    image_name: "acr_name.azurecr.io/govt-prep-app:latest"
+  
+  tasks:
+    - name: Check if kubectl is installed
+      command: which kubectl
+      register: kubectl_check
+      failed_when: false
+      changed_when: false
+    
+    - name: Verify kubectl installation
+      fail:
+        msg: "kubectl is not installed. Please install kubectl first."
+      when: kubectl_check.rc != 0
+    
+    - name: Replace ACR placeholder in deployment file
+      replace:
+        path: "{{ deployment_file }}"
+        regexp: 'acr_name.azurecr.io'
+        replace: '{{ acr_login_server }}'
+      when: acr_login_server != ""
+    
+    - name: Apply Kubernetes deployment
+      command: kubectl apply -f "{{ deployment_file }}"
+      register: deployment_result
+    
+    - name: Display deployment output
+      debug:
+        var: deployment_result.stdout
+    
+    - name: Apply Kubernetes service
+      command: kubectl apply -f "{{ service_file }}"
+      register: service_result
+    
+    - name: Display service output
+      debug:
+        var: service_result.stdout
+    
+    - name: Wait for deployment to be ready
+      command: kubectl rollout status deployment/govt-prep-deploy
+      register: rollout_result
+      until: rollout_result.rc == 0
+      retries: 30
+      delay: 10
+    
+    - name: Get deployment status
+      command: kubectl get deployment govt-prep-deploy -o wide
+      register: deployment_status
+    
+    - name: Display deployment status
+      debug:
+        var: deployment_status.stdout
+    
+    - name: Get service details
+      command: kubectl get service govt-prep-service -o wide
+      register: service_status
+    
+    - name: Display service status
+      debug:
+        var: service_status.stdout
+    
+    - name: Get pods status
+      command: kubectl get pods -l app=govt-prep
+      register: pods_status
+    
+    - name: Display pods status
+      debug:
+        var: pods_status.stdout
+
